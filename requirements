@@ -1,0 +1,8 @@
+uvicorn
+fastapi
+h5py
+torch
+sentence_transformers
+transformers @ git+https://github.com/huggingface/transformers
+loguru
+langchain
