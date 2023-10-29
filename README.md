@@ -1,0 +1,2 @@
+# embedding-fast-api-server
+ 
