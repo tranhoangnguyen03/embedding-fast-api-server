@@ -1,0 +1,7 @@
+uvicorn
+fastapi
+torch
+sentence_transformers
+transformers[torch]
+loguru
+langchain

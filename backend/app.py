@@ -11,17 +11,14 @@ from loguru import logger
 router = APIRouter()
 
 # Initiate the app
-def create_app():
-    app = FastAPI(title="Embeddings Fast API Server", version="0.1")
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
-    app.include_router(router)
-    return app
+app = FastAPI(title="Embeddings Fast API Server", version="0.1")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define request and response models
 class CreateEmbeddingRequest(BaseModel):
@@ -83,3 +80,5 @@ async def create_embedding_st(request: CreateEmbeddingRequest):
         **request.dict(), 
         model=MODELS["st"]
     )
+
+app.include_router(router)
